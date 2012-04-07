@@ -32,7 +32,7 @@ public class FormControlCenter extends JFrame {
 		
 		handler=new EventHandler(new ControlTableModel());
 		tblControlPanel.setModel(handler.getTableModel());
-		
+		tblControlPanel.getColumnModel().getColumn(3).setCellRenderer(new FireCellRenderer());
 		service=new TemperatureService(fireAlarmWidget, handler);
 		fireAlarmWidget.addService(service);
 		
