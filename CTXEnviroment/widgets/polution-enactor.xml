@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enactor xmlns="http://www.contexttoolkit.org/ctk" name="PolutionEnactor">
+
+        <InWidget  href="pollution-widget.xml" />
+        <OutWidget href="alarmpollution-widget.xml" />
+        
+        <OutcomeName>level</OutcomeName>
+        
+        <Reference name="Lower">
+                <Query name="lower">
+                 
+                                (LESS_EQUAL level 20)
+                      
+                </Query>
+                <Outcome outAttribute="status">"Lower-"+local</Outcome>
+                <ServiceInput service="PollutionService" function="pollutionControl">
+                        <Attribute name="status" />
+                </ServiceInput>
+        </Reference>
+        
+        <Reference name="Medium">
+                <Query name="medium">
+                        (AND 
+                                (LESS_EQUAL level 40)
+                                (GREATER level 20)
+                        )
+                </Query>
+                <Outcome outAttribute="status">"Medium-"+local</Outcome>
+                <ServiceInput service="PollutionService" function="pollutionControl">
+                        <Attribute name="status" />
+                </ServiceInput>
+        </Reference>
+        
+        <Reference name="High">
+                <Query name="high">
+                       
+                                (GREATER level 40)
+                    
+                </Query>
+                <Outcome outAttribute="status">"High-"+local</Outcome>
+                <ServiceInput service="PollutionService" function="pollutionControl">
+                        <Attribute name="status" />
+                </ServiceInput>
+        </Reference>
+        
+</Enactor>

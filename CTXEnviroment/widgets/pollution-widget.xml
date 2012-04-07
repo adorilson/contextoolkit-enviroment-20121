@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Widget xmlns="http://www.contexttoolkit.org/ctk" name="PollutionWidget">            
+        <Attributes>
+                <Attribute name="level" type="int" />
+                <Attribute name="local" type="string"/>
+        </Attributes>   
+</Widget>

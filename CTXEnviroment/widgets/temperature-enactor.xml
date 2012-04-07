@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Enactor xmlns="http://www.contexttoolkit.org/ctk" name="TemperatureEnactor">
+
+        <InWidget  href="temperature-widget.xml" />
+        <OutWidget href="alarmfire-widget.xml" />
+        
+        <OutcomeName>status</OutcomeName>
+        
+        <Reference name="OnFire">
+                <Query name="onFire">
+                        ( EQUAL fire 1)
+                </Query>
+                <Outcome outAttribute="status">
+                "On Fire-"+(temperature)+"-"+(location);
+                </Outcome>
+                <ServiceInput service="TemperatureService" function="fireControl">
+                        <Attribute name="status" />
+                </ServiceInput>
+        </Reference>
+        
+        <Reference name="OffFire">
+                <Query name="offFire">
+                        ( EQUAL fire 0
+                        )
+                </Query>
+                <Outcome outAttribute="status">
+                "Off Fire-"+(temperature)+"-"+(location);
+                </Outcome>
+                <ServiceInput service="TemperatureService" function="fireControl">
+                        <Attribute name="status" />
+                </ServiceInput>
+        </Reference>
+        
+</Enactor>
