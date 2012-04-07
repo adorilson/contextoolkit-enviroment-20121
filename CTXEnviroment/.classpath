@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/contexttoolkit-2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/hibernate3.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/jahmm-0.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/jdom.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/slf4j-api-1.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/slf4j-log4j12-1.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/andregustavo/Doutorado/Bibliotecas/Context Toolkit/weka.jar"/>
+	<classpathentry kind="lib" path="forms-1.3.0.jar" sourcepath="forms-1.3.0-src.zip"/>
+	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
