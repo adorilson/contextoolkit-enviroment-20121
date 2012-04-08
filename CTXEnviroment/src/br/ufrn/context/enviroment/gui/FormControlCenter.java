@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import br.ufrn.context.enviroment.event.EventHandler;
+import br.ufrn.context.enviroment.services.PollutionService;
 import br.ufrn.context.enviroment.services.TemperatureService;
 
 import context.arch.enactor.Enactor;
@@ -26,17 +27,30 @@ public class FormControlCenter extends JFrame {
 	private TemperatureService service;
 	private Enactor enactor;
 	private EventHandler handler;
+	
+	private Enactor pollutionEnactor;
+	private Widget pollutionWidget;
+	private PollutionService pollutionService;
+	
 	private void initWidgetsEnactor(){
 		
 		fireAlarmWidget=WidgetXmlParser.createWidget("widgets/alarmfire-widget.xml");
 		
+		
 		handler=new EventHandler(new ControlTableModel());
 		tblControlPanel.setModel(handler.getTableModel());
 		tblControlPanel.getColumnModel().getColumn(3).setCellRenderer(new FireCellRenderer());
+		
 		service=new TemperatureService(fireAlarmWidget, handler);
 		fireAlarmWidget.addService(service);
 		
 		enactor=EnactorXmlParser.createEnactor("widgets/temperature-enactor.xml");
+		
+		pollutionWidget=WidgetXmlParser.createWidget("widgets/pollution-widget.xml");
+		pollutionService=new PollutionService(pollutionWidget, handler);
+		pollutionWidget.addService(pollutionService);
+		pollutionEnactor=EnactorXmlParser.createEnactor("widgets/pollution-enactor.xml");
+		
 		
 	}
 	

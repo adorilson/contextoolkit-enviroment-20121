@@ -25,6 +25,8 @@ public class EventHandler {
 
 
 	public void changeTemperature(String status){
+		System.out.println("EventHandler.changeTemperature");
+		System.out.println(status);
 		
 		StringTokenizer st=new StringTokenizer(status,"-");
 		
@@ -46,4 +48,25 @@ public class EventHandler {
 		tableModel.addData(modelo, ControlTableModel.TEMPERATURE);
 		
 	}
+	
+	public void changePollutionLevel(String status){
+		
+		System.out.println("EventHandler.changePollutionLevel");
+		System.out.println(status);
+		
+		StringTokenizer st=new StringTokenizer(status,"-");
+		
+		//String fire=st.nextToken();
+		int pollution=Integer.parseInt(st.nextToken());
+		String place=st.nextToken();
+		
+		LocalModel modelo=new LocalModel();
+		
+		modelo.setPollutionLevel(pollution);
+		modelo.setLocation(place);
+		
+		tableModel.addData(modelo, ControlTableModel.POLLUTION);
+		
+	}
+	
 }
