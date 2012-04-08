@@ -9,6 +9,8 @@ public class EventHandler {
 	public static final String ONFIRE="On Fire";
 	public static final String OFFFIRE="Off Fire";
 	
+	
+	
 	private ControlTableModel tableModel;
 	
 	
@@ -57,7 +59,7 @@ public class EventHandler {
 		StringTokenizer st=new StringTokenizer(status,"-");
 		
 		//String fire=st.nextToken();
-		int pollution=Integer.parseInt(st.nextToken());
+		String pollution=st.nextToken();
 		String place=st.nextToken();
 		
 		LocalModel modelo=new LocalModel();

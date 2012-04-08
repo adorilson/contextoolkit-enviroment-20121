@@ -4,7 +4,7 @@ public class LocalModel {
 
 	private String location;
 	private double temperature;
-	private int pollutionLevel;
+	private String pollutionLevel;
 	private int isFire;
 	public String getLocation() {
 		return location;
@@ -18,10 +18,10 @@ public class LocalModel {
 	public void setTemperature(double temperature) {
 		this.temperature = temperature;
 	}
-	public int getPollutionLevel() {
+	public String getPollutionLevel() {
 		return pollutionLevel;
 	}
-	public void setPollutionLevel(int pollutionLevel) {
+	public void setPollutionLevel(String pollutionLevel) {
 		this.pollutionLevel = pollutionLevel;
 	}
 	public int isFire() {

@@ -38,7 +38,7 @@ public class FormSensorPollution extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		Discoverer.start();
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -57,17 +57,17 @@ public class FormSensorPollution extends JFrame {
 	public FormSensorPollution() {
 		setTitle("Pollution Measure");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 116);
+		setBounds(100, 100, 446, 144);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[][grow]", "[][]"));
+		contentPane.setLayout(new MigLayout("", "[][grow][][]", "[][][][]"));
 		
 		JLabel lblLocal = new JLabel("Local:");
 		contentPane.add(lblLocal, "cell 0 0,alignx trailing");
 		
 		txtLocal = new JTextField();
-		contentPane.add(txtLocal, "cell 1 0,growx");
+		contentPane.add(txtLocal, "cell 1 0 3 1,growx");
 		txtLocal.setColumns(10);
 		
 		JLabel lblPollutionMeasure = new JLabel("Pollution Measure:");

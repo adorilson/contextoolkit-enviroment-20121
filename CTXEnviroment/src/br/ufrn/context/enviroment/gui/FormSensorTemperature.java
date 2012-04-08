@@ -44,7 +44,7 @@ public class FormSensorTemperature extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		Discoverer.start();
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

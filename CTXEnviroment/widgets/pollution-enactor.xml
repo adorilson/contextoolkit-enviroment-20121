@@ -37,7 +37,7 @@
                                 (GREATER level 40)
                     
                 </Query>
-                <Outcome outAttribute="status">"High-"+local</Outcome>
+                <Outcome outAttribute="status">"Higher-"+local</Outcome>
                 <ServiceInput service="PollutionService" function="pollutionControl">
                         <Attribute name="status" />
                 </ServiceInput>
