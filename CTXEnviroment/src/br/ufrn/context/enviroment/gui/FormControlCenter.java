@@ -46,13 +46,9 @@ public class FormControlCenter extends JFrame {
 	
 	private void initWidgetsEnactor(){
 		
-		fireAlarmWidget=WidgetXmlParser.createWidget("widgets/alarmfire-widget.xml");
-		
-		
 		handler=new EventHandler(new ControlTableModel());
-		tblControlPanel.setModel(handler.getTableModel());
-		tblControlPanel.getColumnModel().getColumn(3).setCellRenderer(new FireCellRenderer());
-		tblControlPanel.getColumnModel().getColumn(2).setCellRenderer(new PollutionCellRenderer());
+		
+		fireAlarmWidget=WidgetXmlParser.createWidget("widgets/alarmfire-widget.xml");
 		service=new TemperatureService(fireAlarmWidget, handler);
 		fireAlarmWidget.addService(service);
 		
@@ -61,9 +57,12 @@ public class FormControlCenter extends JFrame {
 		pollutionWidget=WidgetXmlParser.createWidget("widgets/alarmpollution-widget.xml");
 		pollutionService=new PollutionService(pollutionWidget, handler);
 		pollutionWidget.addService(pollutionService);
+		
 		pollutionEnactor=EnactorXmlParser.createEnactor("widgets/pollution-enactor.xml");
 		
-		
+		tblControlPanel.setModel(handler.getTableModel());
+		tblControlPanel.getColumnModel().getColumn(3).setCellRenderer(new FireCellRenderer());
+		tblControlPanel.getColumnModel().getColumn(2).setCellRenderer(new PollutionCellRenderer());
 	}
 	
 	/**
